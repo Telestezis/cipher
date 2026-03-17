@@ -20,13 +20,13 @@ public class GronsfeldCipherGUI extends JFrame {
 
     Font largeFont = new Font("Segoe UI", Font.PLAIN, 16);
 
-    // === Исходный текст ===
+    // Исходный текст
     inputArea = new JTextArea(8, 30);
     inputArea.setFont(largeFont);
     JScrollPane inputScroll = new JScrollPane(inputArea);
     inputScroll.setBorder(BorderFactory.createTitledBorder("Исходный текст"));
 
-    // === Поле ключа (исправлено!) ===
+    // Поле ключа
     keyField = new JTextField(); // теперь будет растягиваться
     keyField.setFont(largeFont);
     JLabel keyLabel = new JLabel("Ключ (только цифры):");
@@ -41,7 +41,7 @@ public class GronsfeldCipherGUI extends JFrame {
     keyPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
     keyPanel.setPreferredSize(new Dimension(0, 50));
 
-    // === Кнопки ===
+    // Кнопки
     JButton encryptButton = new JButton("Зашифровать");
     JButton decryptButton = new JButton("Расшифровать");
     encryptButton.setFont(largeFont);
@@ -56,14 +56,14 @@ public class GronsfeldCipherGUI extends JFrame {
     encryptButton.addActionListener(new EncryptAction());
     decryptButton.addActionListener(new DecryptAction());
 
-    // === Результат ===
+    // Результат
     outputArea = new JTextArea(8, 30);
     outputArea.setEditable(false);
     outputArea.setFont(largeFont);
     JScrollPane outputScroll = new JScrollPane(outputArea);
     outputScroll.setBorder(BorderFactory.createTitledBorder("Результат"));
 
-    // === Сборка интерфейса ===
+    //  Сборка интерфейса
     JPanel leftPanel = new JPanel(new BorderLayout());
     leftPanel.add(inputScroll, BorderLayout.CENTER);
     leftPanel.add(keyPanel, BorderLayout.SOUTH);
